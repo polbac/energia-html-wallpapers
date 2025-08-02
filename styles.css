@@ -1,0 +1,99 @@
+/* Estilos generales */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+}
+
+.container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+.imagen-amarilla {
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 0, 1) 0%,
+    rgba(255, 255, 0, 1) 20%,
+    rgba(255, 255, 0, 0) 40%
+  );
+}
+.imagen-negra {
+  background: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 1) 20%,
+    rgba(0, 0, 0, 0) 40%
+  );
+}
+.imagen-amarilla,
+.imagen-negra {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400vw;
+  height: 400vw;
+  border-radius: 50%;
+}
+
+/* Animación de rotación para la imagen amarilla */
+.imagen-amarilla {
+  animation: rotacion360 10s linear infinite;
+}
+
+/* Animación de rotación para la imagen negra */
+.imagen-negra {
+  animation: rotacion360 10s linear infinite reverse;
+}
+
+p {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 6.4vw;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  color: yellow;
+  width: 100%;
+  text-align: center;
+  -webkit-mix-blend-mode: difference;
+  -moz-mix-blend-mode: difference;
+  mix-blend-mode: difference;
+}
+
+/* Keyframes para la animación de rotación */
+@keyframes rotacion360 {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/* Clase para animación de expansión horizontal */
+.expansion {
+  z-index: 2;
+  animation: expansionAncho 20s ease-in-out forwards;
+}
+
+/* Keyframes para la animación de expansión */
+@keyframes expansionAncho {
+  0% {
+    width: 0;
+    height: 0;
+  }
+  100% {
+    width: 400vw;
+    height: 400vw;
+  }
+}
